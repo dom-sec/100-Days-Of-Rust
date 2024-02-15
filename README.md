@@ -14,12 +14,18 @@ We hope you find this challenge fun and rewarding, and we can't wait to see what
 
 # How to Participate
 Fork this repository and create a new branch to track your progress.
+In the exercise folder create a new crate with `cargo new <exercise_name>_<username>` (i.e. convert_ages_to_days_smorci).
+Submit PR with exercises and ask for reviews. Be proactive in reviews.
 Commit to coding and learning Rust for at least an hour every day for 100 days.
 Share your progress on social media with the hashtag #100DaysOfRustCodingChallenge and tag @LiveGray on Twitter.
 We encourage you to share your progress and ask questions in the Discussions section of this repository.
 
 # Rules
 - The main rule is: Code at least an hour every day (don't skip weekends/holidays)
+
+- The other main rule is: Be active everyday on the fork (you don't have to finish an exercise every day)
+
+- Write tests for yourself! Test driven development is productive and useful
 
 - Choose an area of Rust you wan't to learn or improve
 
@@ -28,8 +34,6 @@ We encourage you to share your progress and ask questions in the Discussions sec
 - Try not to copy code from the internet
 
 - Try to come up with a clean and elegant solution
- 
-- Once you can, write tests (and make them pass)
 
 # Resources
 [The Rust Programming Language Book](https://doc.rust-lang.org/book/title-page.html)
