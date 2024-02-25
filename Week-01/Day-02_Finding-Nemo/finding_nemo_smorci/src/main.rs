@@ -1,4 +1,4 @@
-use finding_nemo_smorci::{get_input, find_nemo_iterator};
+use finding_nemo_smorci::{get_input, find_nemo_regex};
 
 fn main() {
 
@@ -8,6 +8,8 @@ fn main() {
 
     let buffer: String = get_input().expect("Unable to read input from stdin.");
 
-    find_nemo_iterator(&buffer);
+    //find_nemo_iterator(&buffer);
+    
+    find_nemo_regex(&buffer);
 
 }

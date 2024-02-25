@@ -1,4 +1,5 @@
 use std::io;
+use regex::Regex;
 
 // Get user input
 pub fn get_input() -> io::Result<String> {
@@ -62,5 +63,29 @@ pub fn find_nemo_iterator(buffer: &str) {
 
     if !found {
         println!("I can't find Nemo :(");
+    }
+}
+
+// Find Nemo Regex Solution
+// TODO This solution panics, match the Error and resolve it
+pub fn find_nemo_regex (buffer: &str) {
+    let nemo_re = Regex::new(r"\s*Nemo\s+").expect("Wrong regex pattern.");
+    let nemo_match = nemo_re.find(buffer.trim()).expect("Error matching regex pattern on buffer.");
+
+
+    if !nemo_match.is_empty() {
+
+        let slice: &str = &buffer[..nemo_match.start()+1];
+
+        let split = slice.split(' ');
+
+        let place_of_nemo: usize = split.count();
+
+        println!("Found Nemo at {place_of_nemo}!");
+
+    } else {
+
+        println!("I can't find Nemo :(");
+
     }
 }
