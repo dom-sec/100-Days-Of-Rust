@@ -1,0 +1,8 @@
+[package]
+name = "conv_age_to_days"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.78.0"
+authors = ["Sebastian Pennino"]
+
+[dependencies]
