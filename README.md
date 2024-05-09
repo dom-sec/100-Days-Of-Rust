@@ -15,7 +15,7 @@ We hope you find this challenge fun and rewarding, and we can't wait to see what
 # How to Participate
 Fork this repository and create a new branch to track your progress.
 Commit to coding and learning Rust for at least an hour every day for 100 days.
-Share your progress on social media with the hashtag #100DaysOfRustCodingChallenge and tag @DomSecRocks on Twitter.
+Share your progress on social media with the hashtag #100DaysOfRustCodingChallenge and tag @LiveGray on Twitter.
 We encourage you to share your progress and ask questions in the Discussions section of this repository.
 
 # Rules
