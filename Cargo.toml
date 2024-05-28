@@ -1,7 +1,9 @@
 [workspace]
+resolver = "2"
 
 members = [
     "Week-01/Day-00_Hello-World",
     "Week-01/Day-01_Convert-Ages-To-Days/conv_age_to_days",
     "Week-01/Day-01_Convert-Ages-To-Days/convert_ages_to_days",
+    "Week-01/Day-02_Finding-Nemo",
 ]
