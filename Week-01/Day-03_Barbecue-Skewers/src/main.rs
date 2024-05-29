@@ -1,26 +1,31 @@
-fn check_barbecue_row(s: &str) {
+fn print_row(s: &str) {
     println!("{}", s);
 }
 
+fn is_vegan(s: &str) -> bool {
+    s.chars().all(|c| c == 'o' || c == '-')
+}
+
 fn check_barbecue(strings: &[&str]) {
+    println!("");
     println!("Let's see what we got:");
     for s in strings {
-        check_barbecue_row(s);
+        print_row(s);
     }
-    println!("")
+
+    let result = strings.iter().fold([0, 0], |mut acc, &row| {
+        if is_vegan(row) {
+            acc[0] += 1;
+        } else {
+            acc[1] += 1;
+        }
+        acc
+    });
+
+    println!("Results are {:?}", result)
 }
 
 fn main() {
-    // let mut num: u8 = 1; // max 255
-
-    // loop {
-    //     if num == 255 {
-    //         println!("-> OK, exiting!");
-    //         break; // Exit this loop
-    //     }
-
-    //     num = num + 1; // increase the loop count
-    // }
     test_the_grill()
 }
 
