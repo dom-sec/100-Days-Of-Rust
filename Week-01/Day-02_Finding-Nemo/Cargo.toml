@@ -6,4 +6,3 @@ rust-version = "1.78.0"
 authors = ["Sebastian Pennino"]
 
 [dependencies]
-regex = "1.10.4"

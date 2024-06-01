@@ -1,17 +1,20 @@
 use std::io;
-use regex::Regex; // https://crates.io/crates/regex
 
-fn find_nemo(str: &str) {
-    let re = Regex::new(r"\bNemo\b").unwrap(); // \b is a word boundary
+fn find_nemo(str: &str) -> String {
 
-    match re.find(str) {
-        Some(m) => {
-            println!("I found Nemo at {}!", m.start());
+    let arr: Vec<&str> = str.split(' ').collect();
+
+    let word = "Nemo";
+
+    match arr.iter().position(|&el| el == word) {
+        Some(index) => {
+            return format!("I found Nemo at {}!", index + 1);
         }
         None => {
-            println!("I can't find Nemo :(");
+            return "I can't find Nemo :(".to_string();
         }
-    };
+    }
+
 }
 
 fn main() {
@@ -22,7 +25,9 @@ fn main() {
     loop {
         println!("");
         println!(
-            "[loop: {}] Please input a phrase or either write quit/exit to exit", num);
+            "[loop: {}] Please input a phrase or either write quit/exit to exit",
+            num
+        );
         phrase.clear(); // Clear the string buffer for new input
 
         io::stdin()
@@ -31,15 +36,55 @@ fn main() {
 
         // Trim the input to remove any trailing newline characters
         let trimmed_phrase = phrase.trim();
-        
+
         // Exit by text or last loop
         if trimmed_phrase == "quit" || trimmed_phrase == "exit" || num == 255 {
             println!("-> OK, exiting!");
             break; // Exit this loop
         }
 
-        find_nemo(trimmed_phrase);
+        let result = find_nemo(&trimmed_phrase);
+
+        println!("{}", &result);
 
         num = num + 1; // increase the loop count
     }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn text1() {
+        assert_eq!(find_nemo("I am finding Nemo !"), "I found Nemo at 4!"); 
+        // fail
+    }
+
+    #[test]
+    fn text2() {
+        assert_eq!(find_nemo("Nemo is me"), "I found Nemo at 1!")
+        // fail
+    }
+    #[test]
+    fn text3() {
+        assert_eq!(find_nemo("I Nemo am"), "I found Nemo at 2!")
+    }
+
+    #[test]
+    fn text4() {
+        assert_eq!(find_nemo("I'm not NeMo"), "I can't find Nemo :(")
+    }
+
+    #[test]
+    fn text5() {
+        assert_eq!(find_nemo("Nemo N°1 and Nemo N°2 are different"), "I found Nemo at 1!")
+        // fail
+    }
+
+    #[test]
+    fn text6() {
+        assert_eq!(find_nemo("Nemos are not Nemor nor Nemox or Nemoi"), "I can't find Nemo :(")
+    }
+
 }
