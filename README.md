@@ -1,7 +1,4 @@
 <h1 align="center">100 Days of Rust 🦀 </h1>
-<p align="center">
-<img width="" src="https://media4.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif?cid=ecf05e4796b9znwjl0zqxljtzh2xe4yer17y5oojmj5kztep&rid=giphy.gif&ct=g" align="center" alt="gif" />
-</p>
 
 # Introduction
 Welcome to the 100 Days of Rust Coding Challenge! This challenge is designed to help you learn and improve your Rust programming skills over the course of 100 days.
