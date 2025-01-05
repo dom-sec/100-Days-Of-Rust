@@ -11,7 +11,6 @@ fn main() {
         }
         let mut pair_socks = 0;
         for (_, value) in socks.iter() {
-            // println!("{}: {}", key, value);
             pair_socks += value / 2;
         }
         println!("{}", pair_socks);
