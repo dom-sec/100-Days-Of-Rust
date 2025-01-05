@@ -1,0 +1,6 @@
+[package]
+name = "pair_of_socks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
